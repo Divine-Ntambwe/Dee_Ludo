@@ -34,7 +34,9 @@ import { useNavigate } from "react-router-dom";
 
 function Game() {
   const nav = useNavigate();
-  const [currentPositions, setCurrentPositions] = useState({});
+  const [currentPositions, setCurrentPositions] = useState({
+    bluetoken4:50
+  });
   const initialPositions = [
     {
       token1: { x: 33.2, y: 75, block: 0 },
@@ -86,10 +88,10 @@ function Game() {
   const [turn, setTurn] = useState(0);
   const mapContainer = useRef();
   const diceContainer = useRef();
-  const [tokensOut, setTokensOut] = useState([]);
+  const [tokensOut, setTokensOut] = useState(["bluetoken4"]);
   const playerColors = ["blue", "red", "green", "yellow"];
   const colors = ["#07b1ea", "#b51616", "#057f05", "#f1f116"];
-  const [colorsWon, setColorsWon] = useState([]);
+  const [colorsWon, setColorsWon] = useState([""]);
 
   const blueDice = useRef(),
     redDice = useRef(),
@@ -596,17 +598,6 @@ function Game() {
       });
     }
     console.log(tokensOut);
-    // if (tokensToStack.length > 1) {
-    //   const uniqueTokens = [...new Set(tokensToStack)]; // remove duplicates if any
-    //   uniqueTokens.forEach((tokenEl, index) => {
-    //     if (tokenEl) {
-    //       const scale = 0.8 - 0.01 * uniqueTokens.length;
-    //       const offsetX = -5 * uniqueTokens.length + index * 10;
-    //       tokenEl.style.transform = `scale(${scale}) translateX(${offsetX}px)`;
-    //       tokenEl.style.transition = "transform 0.3s ease";
-    //     }
-    //   });
-    // }
 
     return wasCapture;
   }
@@ -708,7 +699,7 @@ function Game() {
           console.log(tokensOut);
           setTokensOut(tokensOut);
           diceOn(allDice[0]);
-          e.target.style.transform = `translateX(${20 + (5*num)}px) scale(0.8)`;
+          e.target.style.transform = `translateX(${15 + (5*num)}px) scale(0.8)`;
           return;
         }
 
@@ -729,11 +720,11 @@ function Game() {
           diceOn(allDice[0], allDice[turn]);
         } else {
           console.log("Relacccc");
-          // setTurn(turn + inc);
-          // diceOn(allDice[turn + inc], allDice[turn]);
+          setTurn(turn + inc);
+          diceOn(allDice[turn + inc], allDice[turn]);
 
-          setTurn(0);
-          diceOn(allDice[0], allDice[turn]);
+          // setTurn(0);
+          // diceOn(allDice[0], allDice[turn]);
         }
       }, diceNum * 350);
       //CHANGE THIS ^
