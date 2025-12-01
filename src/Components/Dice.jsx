@@ -9,8 +9,8 @@ function Dice({setDiceNum}) {
 
     const randomDice = () => {
     
-        let random =  Math.floor(Math.random() * 2) ;
-        random = [1,6][random]
+        let random =  Math.floor(Math.random() * 10) ;
+    
         if (random >= 1 && random <= 6)  {
             rollDice(random);
             setDiceNum(random)

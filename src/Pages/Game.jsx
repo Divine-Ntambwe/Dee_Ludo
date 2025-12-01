@@ -35,7 +35,7 @@ import { useNavigate } from "react-router-dom";
 function Game() {
   const nav = useNavigate();
   const [currentPositions, setCurrentPositions] = useState({
- 
+    
   });
   const initialPositions = [
     {
@@ -677,7 +677,7 @@ function Game() {
           console.log("eh eh");
           setColorsWon([...colorsWon, "blue"]);
           handlePlayerWon(blueOverlay.current);
-          e.target.style.transform = `translateX(${20 + 5 * num}px) scale(0.8)`;
+          e.target.style.transform = `translateX(${num > 2?-5*num:5*num}px) scale(0.8)`;
           let inc = numOfPlayers === 2 ? 2 : 1; //add to turn depending on num of players
           let minus = numOfPlayers >= 3 ? 1 : 0; //minus from turn depending on num of players
           if (turn >= numOfPlayers - minus) {
@@ -699,7 +699,7 @@ function Game() {
           console.log(tokensOut);
           setTokensOut(tokensOut);
           diceOn(allDice[0]);
-          e.target.style.transform = `translateX(${15 + (5*num)}px) scale(0.8)`;
+          e.target.style.transform = `translateX(${num > 2?-5*num:5*num}px) scale(0.8)`;
           return;
         }
 
@@ -778,7 +778,7 @@ function Game() {
           console.log("winning", redOverlay.current);
           setColorsWon([...colorsWon, "red"]);
           handlePlayerWon(redOverlay.current);
-          e.target.style.transform = `translateY(${20 + 7 * num}px) scale(0.8)`;
+          e.target.style.transform = `translateY(${num > 2?-5*num:5*num}px) scale(0.8)`;
           let inc = numOfPlayers === 2 ? 2 : 1;
           let minus = numOfPlayers >= 3 ? 1 : 0;
           if (turn >= numOfPlayers - minus) {
@@ -798,7 +798,7 @@ function Game() {
           console.log(tokensOut);
           setTokensOut(tokensOut);
           diceOn(allDice[1]);
-          e.target.style.transform = `translateY(${20 + 7 * num}px) scale(0.8)`;
+          e.target.style.transform = `translateX(${num > 2?-5*num:5*num}px) scale(0.8)`;
           return;
         }
 
@@ -862,7 +862,7 @@ function Game() {
         if (allGreenTokens.getMoveStatus() === "won!") {
           setColorsWon([...colorsWon, "green"]);
           handlePlayerWon(greenOverlay.current);
-          e.target.style.transform = `translateX(${20 + 5 * num}px) scale(0.8)`;
+          e.target.style.transform = `translateX(${num > 2?-5*num:5*num}px) scale(0.8)`;
           let inc = numOfPlayers === 2 ? 2 : 1;
           let minus = numOfPlayers >= 3 ? 1 : 0;
           if (turn >= numOfPlayers - minus) {
@@ -881,7 +881,7 @@ function Game() {
           console.log(tokensOut);
           setTokensOut(tokensOut);
           diceOn(allDice[2]);
-          e.target.style.transform = `translateX(${20 + 5 * num}px) scale(0.8)`;
+          e.target.style.transform = `translateX(${num > 2?-5*num:5*num}px) scale(0.8)`;
           return;
         }
 
@@ -951,7 +951,7 @@ function Game() {
         if (allYellowTokens.getMoveStatus() === "won!") {
           setColorsWon([...colorsWon, "yellow"]);
           handlePlayerWon(yellowOverlay.current);
-          e.target.style.transform = `translateY(${20 + 7 * num}px) scale(0.8)`;
+          e.target.style.transform = `translateY(${num > 2?-5*num:5*num}px) scale(0.8)`;
           let inc = numOfPlayers === 2 ? 2 : 1;
           let minus = numOfPlayers >= 3 ? 1 : 0;
           if (turn >= numOfPlayers - minus) {
