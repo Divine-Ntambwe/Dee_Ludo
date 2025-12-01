@@ -61,7 +61,7 @@ const rollDice = random => {
 
         dice.style.animation = 'none';
 
-    }, 1050);
+    }, 950);
 
 }
   return (

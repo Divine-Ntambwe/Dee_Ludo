@@ -7,6 +7,7 @@ import Game from "./Pages/Game";
 import Splash from "./Pages/Splash"
 import { createContext } from "react";
 import Dice from "./Components/Dice";
+import GalacticLudoRules from "./Pages/CarGame";
 export const TokensContext = createContext();
 function App() {
   const [bluePositions, setBluePositions] = useState(null);
@@ -40,6 +41,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Splash/>} />
             <Route path="/Ludo" element={<Game/>}/>
+            <Route path="/Rules" element={<GalacticLudoRules/>}/>
           </Routes>
         </Router>
       </TokensContext.Provider>
