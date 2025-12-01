@@ -35,7 +35,7 @@ import { useNavigate } from "react-router-dom";
 function Game() {
   const nav = useNavigate();
   const [currentPositions, setCurrentPositions] = useState({
-    bluetoken4:50
+ 
   });
   const initialPositions = [
     {
@@ -88,10 +88,10 @@ function Game() {
   const [turn, setTurn] = useState(0);
   const mapContainer = useRef();
   const diceContainer = useRef();
-  const [tokensOut, setTokensOut] = useState(["bluetoken4"]);
+  const [tokensOut, setTokensOut] = useState([]);
   const playerColors = ["blue", "red", "green", "yellow"];
   const colors = ["#07b1ea", "#b51616", "#057f05", "#f1f116"];
-  const [colorsWon, setColorsWon] = useState([""]);
+  const [colorsWon, setColorsWon] = useState([]);
 
   const blueDice = useRef(),
     redDice = useRef(),
