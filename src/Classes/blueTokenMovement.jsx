@@ -6,7 +6,7 @@ export class blueTokenObj {
     this.token1 = { x: 33.2, y: 75, block: 0 };
     this.token2 = { x: 33.2, y: 65, block: 0 };
     this.token3 = { x: 38.2, y: 75, block: 0 };
-    this.token4 = {x: 48.8, y: 85, block: 50};
+    this.token4 = {x: 38.2, y: 65, block: 50};
     this.playingTokens = ["4"];
     this.styles = styles;
     this.setBluePositions = setBluePositions;
