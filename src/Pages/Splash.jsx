@@ -103,14 +103,14 @@ function Splash() {
           <h1>Dee Ludo</h1>
 
           <img className={styles.bgImg} src={bgImg} />
-          <div style={{display:"flex",gap:"110px"}}>
+          <div >
 
           <button className={styles.openSelector}onClick={()=>{
             handleClickOpen()
           }}>Pass and Play</button>
-          <button className={styles.openSelector}onClick={()=>{
+          {/* <button className={styles.openSelector}onClick={()=>{
             nav("/Rules")
-          }}>Rules</button>
+          }}>Rules</button> */}
           </div>
         </div>
 

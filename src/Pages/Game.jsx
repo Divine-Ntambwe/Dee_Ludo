@@ -1058,7 +1058,7 @@ function Game() {
   }, []);
 
   return (
-    <>
+    <div>
       {Boolean(colorsWon.length) && (
         <Dialog
           open={open}
@@ -1579,7 +1579,7 @@ function Game() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 
